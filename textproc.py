@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Andy Sayler
 # Summer 2014
 # CSCI 3308
