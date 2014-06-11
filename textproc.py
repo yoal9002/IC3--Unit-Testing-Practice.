@@ -3,8 +3,15 @@
 # Andy Sayler
 # Summer 2014
 # CSCI 3308
-# Univerity of Colorado
+# University of Colorado
 # Text Processing Module
+
+"""
+A simple module with various Text Processing Capabilities
+
+"""
+
+# Imports
 
 import re
 
@@ -12,7 +19,7 @@ import re
 
 class TextProcError(Exception):
     """
-    Base Class for TextProc Excpetions
+    Base Class for TextProc Exceptions
 
     """
 
@@ -21,6 +28,7 @@ class TextProcError(Exception):
         TextProcError Constructor
 
         :param msg: error message
+        :return: TextProcError instance
 
         """
 
@@ -38,7 +46,8 @@ class Processor:
         """
         Test Processor Constructor
 
-        :param text: text string to process
+        :param str text: text string to process
+        :return: Processor instance
 
         """
 
@@ -48,24 +57,66 @@ class Processor:
         self.text = text
 
     def __len__(self):
+        """
+        Length of text
+
+        :return: Length
+
+        """
+
         return len(self.text)
 
     def count(self):
+        """
+        Count number of characters in text
+
+        :return: Length
+
+        """
+
         return len(self)
 
     def count_alpha(self):
+        """
+        Count number of alphabetic characters in text
+
+        :return: Number of alphabetic characters
+
+        """
+
         alpha = re.compile(r'[a-z]')
         return len(alpha.findall(self.text))
 
     def count_numeric(self):
+        """
+        Count number of numeric characters in text
+
+        :return: Number of numeric characters
+
+        """
+
         alpha = re.compile(r'[1-9]')
         return len(alpha.findall(self.text))
 
     def count_vowels(self):
+        """
+        Count number of vowels in text
+
+        :return: Number of vowels
+
+        """
+
         vowels = re.compile(r'[aeou]', re.IGNORECASE)
         return len(vowels.findall(self.text))
 
     def is_phonenumber(self):
+        """
+        Check if text is a valid US phone number
+
+        :return: True or False
+
+        """
+
         phonenum = re.compile(r'^[1-9]{3}([\-.])*[1-9]{3}\1*[1-9]{3}$')
         if phonenum.match(self.text) is None:
             return False
