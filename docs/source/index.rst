@@ -14,6 +14,7 @@ TextProc
 .. automodule:: textproc
     :members:
     :undoc-members:
+    :special-members:
     :show-inheritance:
 
 Contents
