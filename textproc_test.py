@@ -29,7 +29,7 @@ class TextprocTestCase(unittest.TestCase):
     def test_init(self):
         text = "tesing123"
         p = textproc.Processor(text)
-        self.assertEqual(p.text, text)
+        self.assertEqual(p.text, text, "'text' does not match input")
 
     # Add Your Test Cases Here...
 
